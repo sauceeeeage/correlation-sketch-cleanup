@@ -1,0 +1,7 @@
+*.csv
+*.html
+*.json
+*.png
+*.txt
+/lib
+.idea
