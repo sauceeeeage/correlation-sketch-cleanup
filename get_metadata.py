@@ -25,7 +25,7 @@ def as_python_object(dct):
 def read_back_serialized_object(file_name):
     with open(file_name, 'r') as fp:
         full_description = json.load(fp, object_hook=as_python_object)
-    fp.close()
+        fp.close()
     return full_description
 
 def main():
@@ -54,7 +54,7 @@ def main():
     json_str = json.dumps(full_description, indent=4, cls=PythonObjectEncoder)
     with open('full_description.json', 'w') as fp:
         fp.write(json_str)
-    fp.close()
+        fp.close()
 
 
 def get_metadata():
@@ -72,7 +72,7 @@ def get_metadata():
         result = client.get_metadata(hash_value)
         with open('metadata/' + name_value + '.json', 'w') as fp:
             json.dump(result, fp, indent=4)
-        fp.close()
+            fp.close()
 
 
 if __name__ == '__main__':

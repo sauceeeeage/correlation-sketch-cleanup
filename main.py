@@ -1,15 +1,12 @@
 file_path = '/home/shaotong/IdeaProjects/corrsketches2/datas/test_results/test3/test3_sketch-params=kmv:256.csv'
 
-# importing networkx 
-import networkx as nx
- 
-# importing matplotlib.pyplot
-import matplotlib.pyplot as plt
+# import networkx as nx
+# import matplotlib.pyplot as plt
 import re
 import pandas as pd
 from pprint import pprint
-from tqdm import tqdm
-from pyvis.network import Network
+# from tqdm import tqdm
+# from pyvis.network import Network
 import csv
 from collections import defaultdict
 import json
@@ -102,7 +99,7 @@ def main():
         easy_negatives = data[data['mi_actual'] <= mi_threshold]
         # fin_result: [[[string, string], [string, string]]] = [[]]
         # fin_result = defaultdict(list) # {[x_num_col, csv_x_name]: [[y_num_col, csv_y_name], ...]}
-        simple_result: Dict[str, List[str]] = dict()
+        simple_result = dict()
         output_file = open("benchmark_output.csv", "a")
         neg_file = open("easy_negatives.csv", "a")
         elimate_duplicates(output_file, result, counter, skip_file_counter, previous_pairs, mi_threshold)
